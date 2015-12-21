@@ -8,7 +8,7 @@ public class JeopardyClient {
 	public static void main(String[] args) {
 		try {
 			MulticastSocket socket = new MulticastSocket(42420);
-			InetAddress group = InetAddress.getByName("203.0.113.0");
+			InetAddress group = InetAddress.getByName("233.0.113.0");
 			socket.joinGroup(group);
 			
 			DatagramPacket packet;

@@ -6,8 +6,8 @@ import java.net.*;
 public class JeopardyServerThread extends Thread {
 	private DatagramSocket socket;
 	
-	public JeopardyServerThread() {
-		super("Jeopardy Server Thread");
+	public JeopardyServerThread() throws SocketException {
+		this("Jeopardy Server Thread");
 	}
 	
 	public JeopardyServerThread(String name) throws SocketException {
@@ -22,7 +22,7 @@ public class JeopardyServerThread extends Thread {
 			String msg = "Hello world!";
 			buf = msg.getBytes();
 			
-			InetAddress group = InetAddress.getByName("2013.0.113.0");
+			InetAddress group = InetAddress.getByName("233.0.113.0");
 			DatagramPacket packet;
 			packet = new DatagramPacket(buf, buf.length, group, 42420);
 			socket.send(packet);
